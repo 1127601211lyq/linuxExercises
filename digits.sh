@@ -1,12 +1,12 @@
 #!/bin/bash
 
-range={1000..2000}
 sum=0
 
-for num in $range;
-	   if [[ $num -eq [01]* ]];
-	      $sum == $sum + $num
-	   fi
-
+for num in {1000..2000}; do
+    if [[ $num =~ ^[01]+$ ]]; then
+	 sum=$((sum + num))
+    fi
+done
+    
 echo $sum
 	      
